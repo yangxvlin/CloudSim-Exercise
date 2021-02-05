@@ -7,6 +7,7 @@ My CloudSim exercise implementation
 - [exercises](#exercises)
   - [CloudSimExercise1](#cloudsimexercise1)
   - [CloudSimExercise2](#cloudsimexercise2)
+  - [CloudSimExercise3](#cloudsimexercise3)
 
 <!-- /TOC -->
 ## installation
@@ -20,3 +21,7 @@ My CloudSim exercise implementation
 ## CloudSimExercise2
 - Shortest Job First (SJF) Task scheduling algorithm implementation in cloudsim
     - see modifications in [DatacenterBrokerSJF.java](./src/DatacenterBrokerSJF.java#L343)
+
+## CloudSimExercise3
+- <img src="./docs/3.jpg" />
+
