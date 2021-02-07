@@ -8,6 +8,7 @@ My CloudSim exercise implementation
   - [CloudSimExercise1](#cloudsimexercise1)
   - [CloudSimExercise2](#cloudsimexercise2)
   - [CloudSimExercise3](#cloudsimexercise3)
+  - [CloudSimExercise4](#cloudsimexercise4)
 
 <!-- /TOC -->
 ## installation
@@ -24,4 +25,9 @@ My CloudSim exercise implementation
 
 ## CloudSimExercise3
 - <img src="./docs/3.jpg" />
+
+
+## CloudSimExercise4
+- Delayed Scheduling by Cloudlet Execution
+- See [CloudSimExercise4](src/CloudSimExercise4.java), [CloudletDelay](src/CloudletDelay.java), [DatacenterBrokerDelay](src/DatacenterBrokerDelay.java#L365)
 
