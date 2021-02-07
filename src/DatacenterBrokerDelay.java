@@ -363,8 +363,10 @@ public class DatacenterBrokerDelay extends SimEntity {
             cloudlet.setVmId(vm.getId());
 
             // ************************ modification start ********************
+            // if no delay, send immediately
             if (!(cloudlet instanceof CloudletDelay) || ((CloudletDelay) cloudlet).getDelayCloudlet() == 0) {
                 sendNow(getVmsToDatacentersMap().get(vm.getId()), CloudSimTags.CLOUDLET_SUBMIT, cloudlet);
+            // otherwise, send with defined cloudlet delay
             } else {
                 send(getVmsToDatacentersMap().get(vm.getId()),
                      ((CloudletDelay) cloudlet).getDelayCloudlet(),
