@@ -6,10 +6,7 @@ import org.cloudbus.cloudsim.provisioners.PeProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Xulin Yang, 904904
@@ -60,7 +57,7 @@ public class CloudSimExercise3 {
                     bw,
                     size,
                     vmm,
-                    new CloudletSchedulerTimeShared()
+                    new CloudletSchedulerSpaceShared()
             ));
         }
         //      5. Add more instances of cloudlets and required to bind the cloudlets to to a particular virtual machine.
@@ -70,9 +67,11 @@ public class CloudSimExercise3 {
         long inputFileSize = 300000;
         long outputFileSize = 400000;
         UtilizationModel utilizationModel = new UtilizationModelFull();
+        Random random = new Random();
         for (int cloudletID = 0; cloudletID < 20; cloudletID++) {
             Cloudlet cloudlet = new Cloudlet(
                     cloudletID,
+//                    length + random.nextInt(100),
                     length,
                     peNumber,
                     inputFileSize,
@@ -92,21 +91,21 @@ public class CloudSimExercise3 {
         CloudSim.startSimulation();
         CloudSim.stopSimulation();
         List<Cloudlet> newList = datacenterBroker.getCloudletReceivedList();
-        // printCloudletList(newList);
-        int cloudNo = 0;
-        for (Cloudlet c: newList) {
-            Log.printLine("******************************");
-            Log.printLine("Result of cloud No: " + cloudNo);
-            Log.printLine("ID:"+c.getCloudletId() +
-                          ", resource:"+c.getResourceName(c.getResourceId()) +
-                          ", VM:"+c.getVmId() +
-                          ", status:" + c.getStatus() +
-                          ", Execution time:" + c.getActualCPUTime() +
-                          ", Start:" + c.getExecStartTime() +
-                          ", End:" + c.getFinishTime()
-            );
-            cloudNo++;
-        }
+        printCloudletList(newList);
+//        int cloudNo = 0;
+//        for (Cloudlet c: newList) {
+//            Log.printLine("******************************");
+//            Log.printLine("Result of cloud No: " + cloudNo);
+//            Log.printLine("ID:"+c.getCloudletId() +
+//                          ", resource:"+c.getResourceName(c.getResourceId()) +
+//                          ", VM:"+c.getVmId() +
+//                          ", status:" + c.getStatus() +
+//                          ", Execution time:" + c.getActualCPUTime() +
+//                          ", Start:" + c.getExecStartTime() +
+//                          ", End:" + c.getFinishTime()
+//            );
+//            cloudNo++;
+//        }
     }
 
     /**
